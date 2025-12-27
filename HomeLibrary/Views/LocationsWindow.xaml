@@ -1,0 +1,37 @@
+<Window x:Class="HomeLibrary.Views.LocationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление местами хранения"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="📍 Управление местами хранения" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <DataGrid Grid.Row="1" x:Name="LocationsDataGrid" SelectionChanged="LocationsDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
+                <DataGridTextColumn Header="Комната" Binding="{Binding Room}" Width="120"/>
+                <DataGridTextColumn Header="Полка/Шкаф" Binding="{Binding Shelf}" Width="120"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*" MinWidth="250"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,15,0,0">
+            <Button Content="➕ Добавить" Style="{StaticResource PrimaryButton}" 
+                    Click="AddButton_Click" Margin="0,0,10,0" Padding="15,8"/>
+            <Button Content="✏ Изменить" Style="{StaticResource SecondaryButton}" 
+                    Click="EditButton_Click" x:Name="EditButton" IsEnabled="False" Margin="0,0,10,0" Padding="15,8"/>
+            <Button Content="🗑 Удалить" Style="{StaticResource SecondaryButton}" 
+                    Click="DeleteButton_Click" x:Name="DeleteButton" IsEnabled="False" Margin="0,0,20,0" Padding="15,8"/>
+            <Button Content="Закрыть" Style="{StaticResource SecondaryButton}" 
+                    Click="CloseButton_Click" Padding="15,8"/>
+        </StackPanel>
+    </Grid>
+</Window>
