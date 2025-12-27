@@ -2,11 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Домашняя библиотека - Вход в систему"
-        Height="400" Width="450"
+        Height="634" Width="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#F5F5F5">
-    <Grid>
+    <Grid Margin="0,0,0,-483">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -24,7 +24,7 @@
         </Border>
 
         <!-- Форма входа -->
-        <Border Grid.Row="1" Background="White" Margin="40" Padding="30" CornerRadius="8">
+        <Border Grid.Row="1" Background="White" Margin="40,40,40,559" Padding="30" CornerRadius="8">
             <Border.Effect>
                 <DropShadowEffect Color="Gray" Opacity="0.3" BlurRadius="10" ShadowDepth="2"/>
             </Border.Effect>
@@ -44,17 +44,6 @@
 
                 <TextBlock x:Name="ErrorMessage" Foreground="Red" TextAlignment="Center" 
                            Margin="0,10,0,0" TextWrapping="Wrap" Visibility="Collapsed"/>
-
-                <Border BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Margin="0,20,0,0" Padding="0,15,0,0">
-                    <StackPanel>
-                        <TextBlock Text="Данные для входа по умолчанию:" FontSize="12" Foreground="#666" 
-                                   HorizontalAlignment="Center" Margin="0,0,0,5"/>
-                        <TextBlock Text="Администратор: admin / admin123" FontSize="11" Foreground="#888" 
-                                   HorizontalAlignment="Center" Margin="0,2,0,0"/>
-                        <TextBlock Text="Пользователь: user1 / user123" FontSize="11" Foreground="#888" 
-                                   HorizontalAlignment="Center" Margin="0,2,0,0"/>
-                    </StackPanel>
-                </Border>
             </StackPanel>
         </Border>
     </Grid>
